@@ -1,0 +1,282 @@
+configuration:
+  analytics:
+    provider: plausible
+  baseUrl: joengineer656.github.io/hardware-notes
+  enablePopovers: true
+  enableSPA: true
+  ignorePatterns:
+  - private
+  - templates
+  - .obsidian
+  locale: en-US
+  pageTitle: Engineering Notes
+  pageTitleSuffix: " \u2014 Hardware"
+  theme:
+    cdnCaching: true
+    colors:
+      darkMode:
+        dark: '#ebebec'
+        darkgray: '#d4d4d4'
+        gray: '#646464'
+        highlight: rgba(143, 159, 169, 0.15)
+        light: '#161618'
+        lightgray: '#393639'
+        secondary: '#7b97aa'
+        tertiary: '#84a59d'
+        textHighlight: '#b3aa0288'
+      lightMode:
+        dark: '#2b2b2b'
+        darkgray: '#4e4e4e'
+        gray: '#b8b8b8'
+        highlight: rgba(143, 159, 169, 0.15)
+        light: '#faf8f8'
+        lightgray: '#e5e5e5'
+        secondary: '#284b63'
+        tertiary: '#84a59d'
+        textHighlight: '#fff23688'
+    fontOrigin: googleFonts
+    typography:
+      body: Source Sans Pro
+      code: IBM Plex Mono
+      header: Schibsted Grotesk
+layout:
+  byPageType:
+    '404':
+      positions:
+        beforeBody: []
+        left: []
+        right: []
+    bases: {}
+    canvas: {}
+    content: {}
+    folder:
+      exclude:
+      - reader-mode
+      positions:
+        right: []
+    tag:
+      exclude:
+      - reader-mode
+      positions:
+        right: []
+  groups:
+    toolbar:
+      direction: row
+      gap: 0.5rem
+      priority: 35
+plugins:
+- enabled: true
+  options:
+    defaultDateType: modified
+    priority:
+    - frontmatter
+    - git
+    - filesystem
+  order: 10
+  source: '@quartz-community/created-modified-date'
+- enabled: true
+  options:
+    keepBackground: false
+    theme:
+      dark: github-dark
+      light: github-light
+  order: 20
+  source: '@quartz-community/syntax-highlighting'
+- enabled: true
+  options:
+    enableCheckbox: true
+    enableInHtmlEmbed: false
+  order: 30
+  source: '@quartz-community/obsidian-flavored-markdown'
+- enabled: true
+  order: 40
+  source: '@quartz-community/github-flavored-markdown'
+- enabled: true
+  layout:
+    position: right
+    priority: 30
+  order: 50
+  source: '@quartz-community/table-of-contents'
+- enabled: true
+  options:
+    markdownLinkResolution: shortest
+  order: 60
+  source: '@quartz-community/crawl-links'
+- enabled: true
+  order: 70
+  source: '@quartz-community/description'
+- enabled: true
+  options:
+    renderEngine: katex
+  order: 80
+  source: '@quartz-community/latex'
+- enabled: false
+  order: 85
+  source: '@quartz-community/citations'
+- enabled: false
+  order: 90
+  source: '@quartz-community/hard-line-breaks'
+- enabled: false
+  order: 91
+  source: '@quartz-community/ox-hugo'
+- enabled: false
+  order: 92
+  source: '@quartz-community/roam'
+- enabled: true
+  source: '@quartz-community/quartz-fonts'
+- enabled: false
+  options:
+    mode: both
+    theme: tokyo-night
+  source: '@quartz-themes/core'
+- enabled: true
+  source: '@quartz-community/remove-draft'
+- enabled: false
+  source: '@quartz-community/explicit-publish'
+- enabled: true
+  source: '@quartz-community/alias-redirects'
+- enabled: true
+  options:
+    enableRSS: true
+    enableSiteMap: true
+  source: '@quartz-community/content-index'
+- enabled: true
+  source: '@quartz-community/favicon'
+- enabled: true
+  source: '@quartz-community/og-image'
+- enabled: true
+  source: '@quartz-community/cname'
+- enabled: true
+  source: '@quartz-community/canvas-page'
+- enabled: true
+  source: '@quartz-community/content-page'
+- enabled: true
+  source: '@quartz-community/folder-page'
+- enabled: true
+  source: '@quartz-community/tag-page'
+- enabled: true
+  layout:
+    position: left
+    priority: 50
+  source: '@quartz-community/explorer'
+- enabled: true
+  layout:
+    position: right
+    priority: 10
+  source: '@quartz-community/graph'
+- enabled: true
+  layout:
+    group: toolbar
+    groupOptions:
+      grow: true
+    position: left
+    priority: 20
+  source: '@quartz-community/search'
+- enabled: true
+  layout:
+    position: right
+    priority: 50
+  source: '@quartz-community/backlinks'
+- enabled: true
+  layout:
+    position: beforeBody
+    priority: 10
+  source: '@quartz-community/article-title'
+- enabled: true
+  layout:
+    position: beforeBody
+    priority: 20
+  source: '@quartz-community/content-meta'
+- enabled: false
+  layout:
+    position: beforeBody
+    priority: 30
+  source: '@quartz-community/tag-list'
+- enabled: true
+  layout:
+    position: left
+    priority: 10
+  source: '@quartz-community/page-title'
+- enabled: true
+  layout:
+    group: toolbar
+    position: left
+    priority: 30
+  source: '@quartz-community/darkmode'
+- enabled: true
+  layout:
+    group: toolbar
+    position: left
+    priority: 35
+  source: '@quartz-community/reader-mode'
+- enabled: true
+  layout:
+    condition: not-index
+    position: beforeBody
+    priority: 5
+  source: '@quartz-community/breadcrumbs'
+- enabled: false
+  layout:
+    position: afterBody
+    priority: 10
+  options:
+    options: {}
+    provider: giscus
+  source: '@quartz-community/comments'
+- enabled: true
+  layout:
+    position: footer
+    priority: 50
+  options:
+    links:
+      GitHub Repo: https://github.com/joengineer656/hardware-notes
+  source: '@quartz-community/footer'
+- enabled: false
+  source: '@quartz-community/recent-notes'
+- enabled: true
+  layout:
+    display: mobile-only
+    position: left
+    priority: 25
+  options: {}
+  order: 25
+  source: '@quartz-community/spacer'
+- enabled: true
+  options: {}
+  order: 50
+  source: '@quartz-community/bases-page'
+- enabled: true
+  layout:
+    display: all
+    position: beforeBody
+    priority: 15
+  options:
+    delimiters: '---'
+    excludedProperties: []
+    hidePropertiesView: false
+    includeAll: false
+    includedProperties:
+    - description
+    - tags
+    - aliases
+    language: yaml
+  order: 5
+  source: '@quartz-community/note-properties'
+- enabled: true
+  options: {}
+  order: 45
+  source: '@quartz-community/unlisted-pages'
+- enabled: true
+  options:
+    iterations: 600000
+    outputPath: static/encryptedContentIndex.json
+    passwordField: password
+    unlistWhenEncrypted: false
+  order: 900
+  source: '@quartz-community/encrypted-pages'
+- enabled: false
+  layout:
+    display: all
+    position: afterBody
+    priority: 50
+  source: '@quartz-community/stacked-pages'
